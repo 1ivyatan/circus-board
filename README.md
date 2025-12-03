@@ -2,9 +2,9 @@
 2.5D Snakes and ladders game
 
 # Tasks
-- [ ] Multiple cursors
+- [x] Multiple cursors
 - [ ] Menu animations
-- [ ] Menu buttons (Start, exit, settings)
+- [ ] Menu buttons (Start, exit, settings, leaderboard)
 - [ ] Character selection
 - [ ] Settings scene
 - [ ] Board scene
