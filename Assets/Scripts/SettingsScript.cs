@@ -15,7 +15,7 @@ public class SettingsScript : MonoBehaviour
         List<TMP_Dropdown.OptionData> data = new List<TMP_Dropdown.OptionData>();
 
         string currentResolution = Screen.width + "x" + Screen.height;
-        int currentResolutionIdx = 0;
+        int currentResolutionIdx = -1;
 
         foreach (Resolution res in resolutions)
         {
@@ -26,6 +26,12 @@ public class SettingsScript : MonoBehaviour
             {
                 currentResolutionIdx = data.Count - 1;
             }
+        }
+
+        if (currentResolutionIdx == -1)
+        {
+            data.Add(new TMP_Dropdown.OptionData(currentResolution));
+            currentResolutionIdx = data.Count - 1;
         }
 
         resolutionDropdown.options = data;
