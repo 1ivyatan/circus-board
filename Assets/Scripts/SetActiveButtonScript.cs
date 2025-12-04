@@ -3,19 +3,30 @@ using UnityEngine;
 
 public class SetActiveButtonScript : MonoBehaviour
 {
-    public GameObject targetObject;
+    public GameObject[] targetObjects;
 
-    public void ToggleActiveAfterDelay(float delay)
+    public void ToggleActiveAfterDelay(int index)
     {
-        StartCoroutine(ToggleActiveCoroutine(delay));
+        StartCoroutine(ToggleActiveCoroutine(0.15f, index));
     }
 
-    private IEnumerator ToggleActiveCoroutine(float delay)
+    private IEnumerator ToggleActiveCoroutine(float delay, int index)
     {
         yield return new WaitForSeconds(delay);
 
-        targetObject.SetActive(!targetObject.activeSelf);
+        
 
-        gameObject.SetActive(!gameObject.activeSelf);
+        int j = 0;
+        foreach (GameObject obj in targetObjects)
+        {
+            if (index == j)
+            {
+                obj.SetActive(true);
+            } else
+            {
+                obj.SetActive(false);
+            }
+            j++;
+        }
     }
 }
