@@ -14,8 +14,6 @@ public class SetActiveButtonScript : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        
-
         int j = 0;
         foreach (GameObject obj in targetObjects)
         {
